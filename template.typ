@@ -2,7 +2,7 @@
   paper: "a4",
   margin: (top: 2.5cm, bottom: 2.5cm, left: 2.5cm, right: 2.5cm), // 页边距
   header: [#h(1fr) _Template_],
-  numbering: "1 / 1", // 页码格式
+  numbering: none
 )
 
 #set par(
@@ -34,6 +34,9 @@
 #outline(title: "目录")     // 目录
 #pagebreak()                // 分页
 /*******************************************************************************/
+
+#counter(page).update(1)       // 页码计数器
+#set page(numbering: "1 / 1")  // 页码格式
 
 = Introduction
 == Preliminaries
